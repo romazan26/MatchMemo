@@ -1,0 +1,95 @@
+{
+  "identifier" : "28E359B1",
+  "nonRenewingSubscriptions" : [
+    {
+      "displayPrice" : "4.9",
+      "familyShareable" : false,
+      "internalID" : "198C3C60",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "1 month",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "oneMonth_pro",
+      "referenceName" : "oneMonth",
+      "type" : "NonRenewingSubscription"
+    },
+    {
+      "displayPrice" : "12.5",
+      "familyShareable" : false,
+      "internalID" : "FB9F5E7E",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "Forever",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "forever_pro",
+      "referenceName" : "forever",
+      "type" : "NonRenewingSubscription"
+    }
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
