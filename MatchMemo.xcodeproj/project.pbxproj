@@ -29,6 +29,14 @@
 		3043D8472C6D32090093E514 /* MyPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043D8462C6D32090093E514 /* MyPhotosViewModel.swift */; };
 		3043D8492C6D327A0093E514 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043D8482C6D32790093E514 /* CoreDataManager.swift */; };
 		3043D84C2C6D36300093E514 /* MyPhotoview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043D84B2C6D36300093E514 /* MyPhotoview.swift */; };
+		3043D84F2C6E26A40093E514 /* FavoriteMatchsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043D84E2C6E26A40093E514 /* FavoriteMatchsView.swift */; };
+		3043D8512C6E29390093E514 /* MatchCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043D8502C6E29390093E514 /* MatchCellView.swift */; };
+		3043D8532C6E2F3C0093E514 /* AddNewMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043D8522C6E2F3C0093E514 /* AddNewMatchView.swift */; };
+		3043D8552C6E2FB20093E514 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043D8542C6E2FB20093E514 /* CustomTextFieldView.swift */; };
+		3043D8592C6E30460093E514 /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043D8582C6E30460093E514 /* MatchViewModel.swift */; };
+		304B138B2C6FDD9900FCCF9A /* FavoriteEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B138A2C6FDD9900FCCF9A /* FavoriteEventsView.swift */; };
+		304B138D2C6FDFF600FCCF9A /* EventsViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B138C2C6FDFF600FCCF9A /* EventsViewmodel.swift */; };
+		304B138F2C6FE18500FCCF9A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B138E2C6FE18500FCCF9A /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +65,14 @@
 		3043D8462C6D32090093E514 /* MyPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPhotosViewModel.swift; sourceTree = "<group>"; };
 		3043D8482C6D32790093E514 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		3043D84B2C6D36300093E514 /* MyPhotoview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPhotoview.swift; sourceTree = "<group>"; };
+		3043D84E2C6E26A40093E514 /* FavoriteMatchsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMatchsView.swift; sourceTree = "<group>"; };
+		3043D8502C6E29390093E514 /* MatchCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCellView.swift; sourceTree = "<group>"; };
+		3043D8522C6E2F3C0093E514 /* AddNewMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMatchView.swift; sourceTree = "<group>"; };
+		3043D8542C6E2FB20093E514 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		3043D8582C6E30460093E514 /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
+		304B138A2C6FDD9900FCCF9A /* FavoriteEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsView.swift; sourceTree = "<group>"; };
+		304B138C2C6FDFF600FCCF9A /* EventsViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewmodel.swift; sourceTree = "<group>"; };
+		304B138E2C6FE18500FCCF9A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +124,8 @@
 		3043D8202C6B35FD0093E514 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				304B13892C6FDD7900FCCF9A /* Events */,
+				3043D84D2C6E26700093E514 /* FavoriteMatch */,
 				3043D84A2C6D36130093E514 /* MyPhoto */,
 				3043D8382C6CE8EF0093E514 /* User */,
 				3043D82E2C6C889C0093E514 /* Subscribe */,
@@ -128,6 +146,7 @@
 		3043D8242C6B3BBE0093E514 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3043D8542C6E2FB20093E514 /* CustomTextFieldView.swift */,
 				3043D8252C6B3BDA0093E514 /* ProgressCircleView.swift */,
 				3043D82B2C6B41900093E514 /* PhotoPicker.swift */,
 				3043D8362C6CE6290093E514 /* BlueButtonView.swift */,
@@ -148,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				3043D8462C6D32090093E514 /* MyPhotosViewModel.swift */,
+				3043D8582C6E30460093E514 /* MatchViewModel.swift */,
+				304B138C2C6FDFF600FCCF9A /* EventsViewmodel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -166,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				3043D8342C6CCB5F0093E514 /* ProductCellView.swift */,
+				3043D8502C6E29390093E514 /* MatchCellView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -185,6 +207,7 @@
 				3043D8412C6D2F710093E514 /* UIImageTransformer.swift */,
 				3043D8432C6D31730093E514 /* MyPhoto.swift */,
 				3043D8482C6D32790093E514 /* CoreDataManager.swift */,
+				304B138E2C6FE18500FCCF9A /* Event.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -195,6 +218,23 @@
 				3043D84B2C6D36300093E514 /* MyPhotoview.swift */,
 			);
 			path = MyPhoto;
+			sourceTree = "<group>";
+		};
+		3043D84D2C6E26700093E514 /* FavoriteMatch */ = {
+			isa = PBXGroup;
+			children = (
+				3043D84E2C6E26A40093E514 /* FavoriteMatchsView.swift */,
+				3043D8522C6E2F3C0093E514 /* AddNewMatchView.swift */,
+			);
+			path = FavoriteMatch;
+			sourceTree = "<group>";
+		};
+		304B13892C6FDD7900FCCF9A /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				304B138A2C6FDD9900FCCF9A /* FavoriteEventsView.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3043D82C2C6B41900093E514 /* PhotoPicker.swift in Sources */,
+				3043D8512C6E29390093E514 /* MatchCellView.swift in Sources */,
 				3043D8322C6C9B620093E514 /* PurchaseManager.swift in Sources */,
 				3043D8112C6B35960093E514 /* ViewController.swift in Sources */,
 				3043D8292C6B3FAB0093E514 /* MainView.swift in Sources */,
@@ -277,16 +318,23 @@
 				3043D8492C6D327A0093E514 /* CoreDataManager.swift in Sources */,
 				3043D8302C6C88D60093E514 /* SubscribeView.swift in Sources */,
 				3043D8472C6D32090093E514 /* MyPhotosViewModel.swift in Sources */,
+				304B138F2C6FE18500FCCF9A /* Event.swift in Sources */,
+				304B138B2C6FDD9900FCCF9A /* FavoriteEventsView.swift in Sources */,
+				3043D8552C6E2FB20093E514 /* CustomTextFieldView.swift in Sources */,
 				3043D8262C6B3BDB0093E514 /* ProgressCircleView.swift in Sources */,
 				3043D8442C6D31730093E514 /* MyPhoto.swift in Sources */,
 				3043D83A2C6CE9180093E514 /* UserView.swift in Sources */,
 				3043D83C2C6CF0090093E514 /* FavoriteView.swift in Sources */,
 				3043D8372C6CE6290093E514 /* BlueButtonView.swift in Sources */,
+				3043D8592C6E30460093E514 /* MatchViewModel.swift in Sources */,
+				3043D84F2C6E26A40093E514 /* FavoriteMatchsView.swift in Sources */,
 				3043D84C2C6D36300093E514 /* MyPhotoview.swift in Sources */,
 				3043D8232C6B36300093E514 /* LoadingView.swift in Sources */,
 				3043D80D2C6B35960093E514 /* AppDelegate.swift in Sources */,
+				3043D8532C6E2F3C0093E514 /* AddNewMatchView.swift in Sources */,
 				3043D80F2C6B35960093E514 /* SceneDelegate.swift in Sources */,
 				3043D8422C6D2F710093E514 /* UIImageTransformer.swift in Sources */,
+				304B138D2C6FDFF600FCCF9A /* EventsViewmodel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

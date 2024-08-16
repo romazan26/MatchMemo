@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct UserView: View {
+    
+    @EnvironmentObject private var purchaseManager: PurchaseManager
+    
+    @StateObject var matchViewModel = MathViewModel()
     @StateObject var photoViewModel = MyPhotosViewModel()
+    @StateObject var eventsViewModel = EventsViewmodel()
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -49,16 +55,25 @@ struct UserView: View {
                         .font(.system(size: 13))
                         .padding(.bottom)
                     
-                    //MARK: - Favorite
-                    FavoriteView(image: .favoriteMatch, text: "Favorite matches", count: 0)
-                    FavoriteView(image: .favoriteEvents, text: "Favorite events", count: 0)
-                    
-                    
+                    //MARK: - Favorite matchs
+                    NavigationLink {
+                        FavoriteMatchsView(vm: matchViewModel)
+                    } label: {
+                        FavoriteView(image: .favoriteMatch, text: "Favorite matches", count: matchViewModel.matchs.count)
+                    }
+                    //MARK: - Favorite evens
+                    NavigationLink {
+                        FavoriteEventsView(vm: eventsViewModel)
+                    } label: {
+                        FavoriteView(image: .favoriteEvents, text: "Favorite events", count: eventsViewModel.events.count)
+                    }
+
+                    //MARK: - Photos count
                     HStack{
                         Text("My photos")
                             .foregroundStyle(.white)
                             .font(.system(size: 19, weight: .heavy))
-                        //MARK: - Photos count
+                        
                         Text("\(photoViewModel.myPhotos.count)")
                             .foregroundStyle(.gray)
                             .font(.system(size: 19, weight: .heavy))
@@ -73,14 +88,39 @@ struct UserView: View {
                         }
                     }.padding(10)
                     
+                    //MARK: - MyPhotos list
                     ScrollView {
-                        LazyVGrid(columns: [GridItem(),GridItem(),GridItem()], content: {
-                            ForEach(0...5, id: \.self) { index in
-                                RoundedRectangle(cornerRadius: 6)
-                                    .frame(width: 110, height: 110)
-                                    .foregroundStyle(.second)
+                        ZStack {
+                            LazyVGrid(columns: [GridItem(),GridItem(),GridItem()], content: {
+                                if purchaseManager.hasUnlockedPro {
+                                    ForEach(photoViewModel.myPhotos.prefix(5)) { photo in
+                                        Image(uiImage: photo.photo ?? UIImage(resource: .simple))
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: 110, height: 110)
+                                            .cornerRadius(6)
+                                    }
+                                }else{
+                                    
+                                        ForEach(0...5, id: \.self) { index in
+                                            RoundedRectangle(cornerRadius: 6)
+                                                .frame(width: 110, height: 110)
+                                                .foregroundStyle(.second)
+                                        }
+                                       
+                                    
+                                }
+                            })
+                            if !purchaseManager.hasUnlockedPro{
+                                VStack{
+                                    Text("from 4.90$").foregroundStyle(.white).font(.title)
+                                    Button(action: {photoViewModel.isPresentMain.toggle()}, label: {
+                                        BlueButtonView(text: "Subscribe")
+                                    }).frame(width: 173)
+                                    
+                                }
                             }
-                        })
+                        }
                     }
                     
                     Spacer()
@@ -93,6 +133,9 @@ struct UserView: View {
                 }.padding()
             }
         }
+        .fullScreenCover(isPresented: $photoViewModel.isPresentMain, content: {
+            MainView()
+        })
     }
 }
 

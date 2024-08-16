@@ -32,16 +32,16 @@ struct MainView: View {
                         .task {
                             await self.purchaseManager.updatePurchasedProducts()
                             print(purchaseManager.hasUnlockedPro)
-                        }
-                        .task {
                             Task {
                                 do {
                                     try await purchaseManager.loadProducts()
+                                    print("loadProducts")
                                 } catch {
                                     print(error)
                                 }
                             }
                         }
+
                 }else if !isPresentUser{
                     SubscribeView(simpleProduct: purchaseManager.products.first!, isPresentUser: $isPresentUser)
                 }else {

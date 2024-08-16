@@ -25,7 +25,7 @@ struct LoadingView: View {
                     .padding()
             }
         }.onAppear(perform: {
-            Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { timer in
+            Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { timer in
                 if percents < 100{
                     percents += 1
                 }else {

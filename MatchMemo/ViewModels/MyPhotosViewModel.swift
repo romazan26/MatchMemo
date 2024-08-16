@@ -18,6 +18,7 @@ final class MyPhotosViewModel: ObservableObject {
     @Published var simplePhoto: UIImage = UIImage(resource: .simple)
     @Published var isPresentPiker = false
     @Published var isEditMode = false
+    @Published var isPresentMain = false
     
     var config: PHPickerConfiguration {
         var config = PHPickerConfiguration(photoLibrary: .shared())
