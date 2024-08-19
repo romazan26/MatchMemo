@@ -37,6 +37,12 @@
 		304B138B2C6FDD9900FCCF9A /* FavoriteEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B138A2C6FDD9900FCCF9A /* FavoriteEventsView.swift */; };
 		304B138D2C6FDFF600FCCF9A /* EventsViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B138C2C6FDFF600FCCF9A /* EventsViewmodel.swift */; };
 		304B138F2C6FE18500FCCF9A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B138E2C6FE18500FCCF9A /* Event.swift */; };
+		306136A22C736727001CD9D8 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136A12C736727001CD9D8 /* AddEventView.swift */; };
+		306136A42C73B7BB001CD9D8 /* MultiLineTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136A32C73B7BB001CD9D8 /* MultiLineTF.swift */; };
+		306136A62C73BB3C001CD9D8 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136A52C73BB3C001CD9D8 /* EventCell.swift */; };
+		306136A92C73D137001CD9D8 /* StatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136A82C73D137001CD9D8 /* StatisticViewModel.swift */; };
+		306136AB2C73D15F001CD9D8 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136AA2C73D15F001CD9D8 /* StatisticView.swift */; };
+		306136AD2C73D6CD001CD9D8 /* StatisticCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136AC2C73D6CD001CD9D8 /* StatisticCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +79,12 @@
 		304B138A2C6FDD9900FCCF9A /* FavoriteEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsView.swift; sourceTree = "<group>"; };
 		304B138C2C6FDFF600FCCF9A /* EventsViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewmodel.swift; sourceTree = "<group>"; };
 		304B138E2C6FE18500FCCF9A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		306136A12C736727001CD9D8 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		306136A32C73B7BB001CD9D8 /* MultiLineTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiLineTF.swift; sourceTree = "<group>"; };
+		306136A52C73BB3C001CD9D8 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		306136A82C73D137001CD9D8 /* StatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewModel.swift; sourceTree = "<group>"; };
+		306136AA2C73D15F001CD9D8 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		306136AC2C73D6CD001CD9D8 /* StatisticCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +136,7 @@
 		3043D8202C6B35FD0093E514 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				306136A72C73CE94001CD9D8 /* Statistics */,
 				304B13892C6FDD7900FCCF9A /* Events */,
 				3043D84D2C6E26700093E514 /* FavoriteMatch */,
 				3043D84A2C6D36130093E514 /* MyPhoto */,
@@ -146,6 +159,7 @@
 		3043D8242C6B3BBE0093E514 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				306136A32C73B7BB001CD9D8 /* MultiLineTF.swift */,
 				3043D8542C6E2FB20093E514 /* CustomTextFieldView.swift */,
 				3043D8252C6B3BDA0093E514 /* ProgressCircleView.swift */,
 				3043D82B2C6B41900093E514 /* PhotoPicker.swift */,
@@ -169,6 +183,7 @@
 				3043D8462C6D32090093E514 /* MyPhotosViewModel.swift */,
 				3043D8582C6E30460093E514 /* MatchViewModel.swift */,
 				304B138C2C6FDFF600FCCF9A /* EventsViewmodel.swift */,
+				306136A82C73D137001CD9D8 /* StatisticViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -188,6 +203,8 @@
 			children = (
 				3043D8342C6CCB5F0093E514 /* ProductCellView.swift */,
 				3043D8502C6E29390093E514 /* MatchCellView.swift */,
+				306136A52C73BB3C001CD9D8 /* EventCell.swift */,
+				306136AC2C73D6CD001CD9D8 /* StatisticCellView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -233,8 +250,17 @@
 			isa = PBXGroup;
 			children = (
 				304B138A2C6FDD9900FCCF9A /* FavoriteEventsView.swift */,
+				306136A12C736727001CD9D8 /* AddEventView.swift */,
 			);
 			path = Events;
+			sourceTree = "<group>";
+		};
+		306136A72C73CE94001CD9D8 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				306136AA2C73D15F001CD9D8 /* StatisticView.swift */,
+			);
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,8 +335,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3043D82C2C6B41900093E514 /* PhotoPicker.swift in Sources */,
+				306136AB2C73D15F001CD9D8 /* StatisticView.swift in Sources */,
 				3043D8512C6E29390093E514 /* MatchCellView.swift in Sources */,
 				3043D8322C6C9B620093E514 /* PurchaseManager.swift in Sources */,
+				306136A22C736727001CD9D8 /* AddEventView.swift in Sources */,
 				3043D8112C6B35960093E514 /* ViewController.swift in Sources */,
 				3043D8292C6B3FAB0093E514 /* MainView.swift in Sources */,
 				3043D8352C6CCB5F0093E514 /* ProductCellView.swift in Sources */,
@@ -324,13 +352,17 @@
 				3043D8262C6B3BDB0093E514 /* ProgressCircleView.swift in Sources */,
 				3043D8442C6D31730093E514 /* MyPhoto.swift in Sources */,
 				3043D83A2C6CE9180093E514 /* UserView.swift in Sources */,
+				306136A42C73B7BB001CD9D8 /* MultiLineTF.swift in Sources */,
+				306136AD2C73D6CD001CD9D8 /* StatisticCellView.swift in Sources */,
 				3043D83C2C6CF0090093E514 /* FavoriteView.swift in Sources */,
 				3043D8372C6CE6290093E514 /* BlueButtonView.swift in Sources */,
 				3043D8592C6E30460093E514 /* MatchViewModel.swift in Sources */,
 				3043D84F2C6E26A40093E514 /* FavoriteMatchsView.swift in Sources */,
+				306136A62C73BB3C001CD9D8 /* EventCell.swift in Sources */,
 				3043D84C2C6D36300093E514 /* MyPhotoview.swift in Sources */,
 				3043D8232C6B36300093E514 /* LoadingView.swift in Sources */,
 				3043D80D2C6B35960093E514 /* AppDelegate.swift in Sources */,
+				306136A92C73D137001CD9D8 /* StatisticViewModel.swift in Sources */,
 				3043D8532C6E2F3C0093E514 /* AddNewMatchView.swift in Sources */,
 				3043D80F2C6B35960093E514 /* SceneDelegate.swift in Sources */,
 				3043D8422C6D2F710093E514 /* UIImageTransformer.swift in Sources */,

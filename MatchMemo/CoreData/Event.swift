@@ -18,6 +18,7 @@ public class Event: NSManagedObject {
         return NSFetchRequest<Event>(entityName: "Event")
     }
 
+    @NSManaged public var title: String?
     @NSManaged public var date: Date?
     @NSManaged public var discription: String?
     @NSManaged public var photo: UIImage?

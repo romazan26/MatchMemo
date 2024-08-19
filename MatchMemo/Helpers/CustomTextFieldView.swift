@@ -11,6 +11,7 @@ struct CustomTextFieldView: View {
     var placeholder = ""
     var alignment: Alignment = .leading
     var textAlignment: TextAlignment = .leading
+    var height: CGFloat = 34
     @Binding var text: String
     var body: some View {
         ZStack(alignment: alignment) {
@@ -29,7 +30,7 @@ struct CustomTextFieldView: View {
         }
         .cornerRadius(25)
         .frame(maxWidth: .infinity)
-        .frame(height: 34)
+        .frame(height: height)
     }
 }
 

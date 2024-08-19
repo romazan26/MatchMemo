@@ -140,5 +140,7 @@ struct UserView: View {
 }
 
 #Preview {
-    UserView()
+    NavigationView {
+        UserView()
+    }
 }

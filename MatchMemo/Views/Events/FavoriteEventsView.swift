@@ -42,9 +42,21 @@ struct FavoriteEventsView: View {
                     
                 }
                 
+                ScrollView {
+                    ForEach(vm.events) { event in
+                        EventCell(event: event, vm: vm)
+                    }
+                }
                 Spacer()
             }.padding()
+                .navigationBarBackButtonHidden()
         }
+        .sheet(isPresented: $vm.isPresentEditEvent, content: {
+            AddEventView(isEdit: true, vm: vm)
+        })
+        .sheet(isPresented: $vm.isPresentAddEvent, content: {
+            AddEventView(vm: vm)
+        })
     }
 }
 

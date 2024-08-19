@@ -8,49 +8,78 @@
 import Foundation
 import CoreData
 import UIKit
+import PhotosUI
 
 final class EventsViewmodel: ObservableObject {
     
     let manager = CoreDataManager.instance
     
     @Published var events: [Event] = []
+    @Published var simpleEvent: Event!
     
-    @Published var simplePhoto: UIImage = UIImage(resource: .event)
+    @Published var simplePhoto: UIImage = UIImage(resource: .addPhoto)
     @Published var simpleDiscription = ""
     @Published var simpleDate = Date()
+    @Published var simpleTitle = ""
     
     @Published var isPresentAddEvent = false
+    @Published var isPresentEditEvent = false
+    @Published var isPresentPiker = false
+    
+    var config: PHPickerConfiguration {
+        var config = PHPickerConfiguration(photoLibrary: .shared())
+        config.filter = .images
+        config.selectionLimit = 1
+        
+        return config
+    }
     
     init(){
         getEvents()
     }
     
+    //MARK: - Edite data
+    func editEvevnt(){
+        let request = NSFetchRequest<Event>(entityName: "Event")
+        
+        do{
+            events = try manager.context.fetch(request)
+            let event = events.first(where: {$0.id == simpleEvent.id})
+            event?.date = simpleDate
+            event?.discription = simpleDiscription
+            event?.photo = simplePhoto
+            event?.title = simpleTitle
+        }catch let error{
+            print("Error fetching: \(error.localizedDescription)")
+        }
+        save()
+        clear()
+        isPresentEditEvent.toggle()
+    }
     
-//    //MARK: - Get hwo is winner
-//    func getWin(a: Int16, b: Int16) -> Bool{
-//        if a > b {
-//            return true
-//        }else {
-//            return false
-//        }
-//    }
-//    
-//    //MARK: - Add Match
-//    func addMatch(){
-//        var a = Int16.random(in: 1...10)
-//        var b = Int16.random(in: 1...10)
-//        let newMatch = Match(context: manager.context)
-//        newMatch.teamTitle1 = simpleTitle1
-//        newMatch.teamTitle2 = simpleTitle2
-//        newMatch.score1 = a
-//        newMatch.score2 = b
-//        newMatch.winner = getWin(a: newMatch.score1, b: newMatch.score2)
-//        
-//        save()
-//        clear()
-//    }
-//    
-//    
+    //MARK: - Fill data
+    func fillEvent(){
+        simpleDate = simpleEvent.date ?? Date()
+        simpleDiscription = simpleEvent.discription ?? ""
+        simpleTitle = simpleEvent.title ?? ""
+        simplePhoto = simpleEvent.photo ?? UIImage(resource: .addPhoto)
+    }
+       
+    //MARK: - Add Event
+    func addEvent(){
+        
+        let newEvent = Event(context: manager.context)
+        newEvent.date = simpleDate
+        newEvent.discription = simpleDiscription
+        newEvent.photo = simplePhoto
+        newEvent.title = simpleTitle
+        
+        save()
+        clear()
+        isPresentAddEvent.toggle()
+    }
+    
+    
     //MARK: - Get data
     func getEvents(){
         let request = NSFetchRequest<Event>(entityName: "Event")
@@ -62,16 +91,17 @@ final class EventsViewmodel: ObservableObject {
         }
     }
     
-//    //MARK: - Clear property
-//    func clear(){
-//        simpleTitle1 = ""
-//        simpleTitle2 = ""
-//    }
-//    
-//    //MARK: - Save data
-//    func save(){
-//        matchs.removeAll()
-//        manager.save()
-//        getMatch()
-//    }
+    //MARK: - Clear property
+    func clear(){
+        simplePhoto = UIImage(resource: .addPhoto)
+        simpleDiscription = ""
+        simpleTitle = ""
+    }
+    
+    //MARK: - Save data
+    func save(){
+        events.removeAll()
+        manager.save()
+        getEvents()
+    }
 }

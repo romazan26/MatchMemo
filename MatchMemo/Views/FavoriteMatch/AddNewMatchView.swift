@@ -20,7 +20,7 @@ struct AddNewMatchView: View {
                 HStack {
                     Button(action: {
                         dismiss()
-                        //                        vm.clear()
+                        vm.clear()
                     }, label: {
                         Image(systemName: "chevron.left")
                             .resizable()

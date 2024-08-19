@@ -4,6 +4,7 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="discription" optional="YES" attributeType="String"/>
         <attribute name="photo" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Match" representedClassName="Match" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -15,5 +16,9 @@
     </entity>
     <entity name="MyPhoto" representedClassName="MyPhoto" syncable="YES">
         <attribute name="photo" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+    </entity>
+    <entity name="Statistic" representedClassName="Statistic" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="salary" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
 </model>
