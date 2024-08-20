@@ -8,22 +8,33 @@
 import SwiftUI
 
 struct StatisticCellView: View {
+    
     @StateObject var vm: StatisticViewModel
-    let statistic: Statistic
+    
+    @ObservedObject var statistic: Statistic
+    var beforeSalary: Int16
+    
+    @State private var different: Int16 = 0
+    @State private var upOrDown = false
+    
     var body: some View {
         ZStack {
             Color.second
             VStack {
                 HStack {
                     //MARK: - Date statistic
-                    Text(Dateformatter(date: Date()))
+                    Text(Dateformatter(date: statistic.date ?? Date()))
                         .foregroundStyle(.white)
                     .font(.system(size: 16, weight: .heavy))
                     
                     Spacer()
                     
                     //MARK: - Edit button
-                    Button(action: {}, label: {
+                    Button(action: {
+                        vm.isPresentEditStatistic.toggle()
+                        vm.simpleStatic = statistic
+                        vm.fillStatistic()
+                    }, label: {
                         Image(systemName: "pencil")
                             .foregroundStyle(.gray)
                     })
@@ -31,24 +42,40 @@ struct StatisticCellView: View {
                 Spacer()
                 HStack{
                     //MARK: - Salary
-                    Text("2 570$")
+                    Text("\(statistic.salary)$")
                         .foregroundStyle(.white)
                         .font(.system(size: 40, weight: .heavy))
                     
                     Spacer()
                     
                     //MARK: - difference in salary
-                    Image(systemName: "arrow.down")
+                    Image(systemName: upOrDown ? "arrow.up" : "arrow.down")
                         .foregroundStyle(.gray)
-                    Text("300$")
+                    Text("\(different)$")
                         .foregroundStyle(.gray)
                         .font(.system(size: 30, weight: .bold))
                 }
             }
             .padding()
-        }.frame(width: 358, height: 124)
+        }
+        .onAppear(perform: {
+            getDifferent()
+        })
+        .frame(width: 358, height: 124)
             .cornerRadius(18)
     }
+    
+    //MARK: - Get different salary
+    private func getDifferent(){
+        if beforeSalary > statistic.salary{
+            different = beforeSalary - statistic.salary
+            upOrDown = false
+        }else{
+            different = statistic.salary - different
+            upOrDown = true
+        }
+    }
+    
     //MARK: - Dateformatter
     private func Dateformatter(date: Date) -> String{
         let dateFormatter = DateFormatter()
@@ -58,5 +85,5 @@ struct StatisticCellView: View {
 }
 
 #Preview {
-    StatisticCellView(vm: StatisticViewModel(), statistic: Statistic())
+    StatisticCellView(vm: StatisticViewModel(), statistic: Statistic(), beforeSalary: 100)
 }

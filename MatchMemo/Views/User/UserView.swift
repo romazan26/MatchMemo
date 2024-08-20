@@ -14,6 +14,8 @@ struct UserView: View {
     @StateObject var matchViewModel = MathViewModel()
     @StateObject var photoViewModel = MyPhotosViewModel()
     @StateObject var eventsViewModel = EventsViewmodel()
+    @StateObject var statisticViewModel = StatisticViewModel()
+    @StateObject var userViewModel = UserViewModel()
     
     var body: some View {
         NavigationView {
@@ -23,34 +25,50 @@ struct UserView: View {
                 
                 //MARK: - Main stack
                 VStack {
-                    //MARK: - Image user
-                    HStack {
-                        Spacer()
+                    Group{
+                        //MARK: - Image user
                         
-                        Image(.user)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 112, height: 112)
-                            .cornerRadius(50)
-                            .padding(.leading, 24)
-                        
-                        Spacer()
-                        
-                        Button(action: {}, label: {
-                            Image(systemName: "gearshape.fill")
+                        HStack {
+                            Spacer()
+                            
+                            Image(uiImage: userViewModel.users.first?.photo ?? UIImage(resource: .user))
                                 .resizable()
-                                .frame(width: 24, height: 24)
-                                .foregroundStyle(.gray)
-                        })
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 112, height: 112)
+                                .cornerRadius(50)
+                                .padding(.leading, 24)
+                            
+                            Spacer()
+                            //MARK: - Settings button
+                            NavigationLink {
+                                SettingsView()
+                            } label: {
+                                Image(systemName: "gearshape.fill")
+                                    .resizable()
+                                    .frame(width: 24, height: 24)
+                                    .foregroundStyle(.gray)
+                            }
+                        }
+                        
+                        //MARK: - User name
+                        HStack {
+                            Text(userViewModel.users.first?.name ?? "enter name")
+                                .foregroundStyle(.white)
+                                .font(.system(size: 23, weight: .heavy))
+                            
+                            //MARK: - Edit user name button
+                            Button(action: {
+                                    userViewModel.isPresentAddUser.toggle()
+                            }, label: {
+                                Image(systemName: userViewModel.users.isEmpty ? "plus" : "pencil")
+                                    .foregroundStyle(.gray)
+                            })
+                            
+                        }
                     }
                     
-                    //MARK: - User name
-                    Text("John Rous")
-                        .foregroundStyle(.white)
-                        .font(.system(size: 23, weight: .heavy))
-                    
-                    //MARK: - Experience iser
-                    Text("3 years of experience")
+                    //MARK: - Experience user
+                    Text("\(userViewModel.users.first?.experience ?? 0) years of experience")
                         .foregroundStyle(.gray)
                         .font(.system(size: 13))
                         .padding(.bottom)
@@ -126,11 +144,16 @@ struct UserView: View {
                     Spacer()
                     
                     //MARK: - Statistics button
-                    Button(action: {}, label: {
+                    NavigationLink {
+                        StatisticView(vm: statisticViewModel)
+                    } label: {
                         BlueButtonView(text: "Statistics")
-                    })
+                    }
                     
                 }.padding()
+                if userViewModel.isPresentAddUser {
+                    AddUser(vm: userViewModel)
+                }
             }
         }
         .fullScreenCover(isPresented: $photoViewModel.isPresentMain, content: {
@@ -139,8 +162,8 @@ struct UserView: View {
     }
 }
 
-#Preview {
-    NavigationView {
-        UserView()
-    }
-}
+//#Preview {
+//    NavigationView {
+//        UserView()
+//    }
+//}

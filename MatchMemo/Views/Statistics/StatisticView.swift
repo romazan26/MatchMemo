@@ -33,7 +33,7 @@ struct StatisticView: View {
                     Spacer()
                     //MARK: - Add photo button
                     Button(action: {
-                        // vm.isPresentAddEvent.toggle()
+                         vm.isPresentAddStatistic.toggle()
                     }, label: {
                         Image(systemName: "plus.circle.fill")
                             .resizable()
@@ -43,12 +43,19 @@ struct StatisticView: View {
                 }
                 ScrollView {
                     ForEach(vm.statistics) { statistic in
-                        StatisticCellView(vm: vm, statistic: statistic)
+                        StatisticCellView(vm: vm, statistic: statistic, beforeSalary: vm.statistics.before(statistic)?.salary ?? 0)
                     }
                 }
                 Spacer()
             }.padding()
+                .navigationBarBackButtonHidden()
         }
+        .sheet(isPresented: $vm.isPresentAddStatistic, content: {
+            AddStatisticview(vm: vm)
+        })
+        .sheet(isPresented: $vm.isPresentEditStatistic, content: {
+            AddStatisticview(isEdit: true, vm: vm)
+        })
     }
 }
 

@@ -43,6 +43,15 @@
 		306136A92C73D137001CD9D8 /* StatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136A82C73D137001CD9D8 /* StatisticViewModel.swift */; };
 		306136AB2C73D15F001CD9D8 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136AA2C73D15F001CD9D8 /* StatisticView.swift */; };
 		306136AD2C73D6CD001CD9D8 /* StatisticCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136AC2C73D6CD001CD9D8 /* StatisticCellView.swift */; };
+		306136AF2C74A4DD001CD9D8 /* AddStatisticview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136AE2C74A4DD001CD9D8 /* AddStatisticview.swift */; };
+		306136B22C74C76F001CD9D8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136B12C74C76F001CD9D8 /* SettingsView.swift */; };
+		306136B42C74C7BD001CD9D8 /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136B32C74C7BD001CD9D8 /* SettingButton.swift */; };
+		306136B62C74C8D9001CD9D8 /* webViewBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136B52C74C8D9001CD9D8 /* webViewBack.swift */; };
+		306136B92C74C8DF001CD9D8 /* WebViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136B72C74C8DF001CD9D8 /* WebViewPage.swift */; };
+		306136BA2C74C8DF001CD9D8 /* webView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136B82C74C8DF001CD9D8 /* webView.swift */; };
+		306136BC2C74D0F1001CD9D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136BB2C74D0F1001CD9D8 /* User.swift */; };
+		306136BE2C74D1B2001CD9D8 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136BD2C74D1B2001CD9D8 /* UserViewModel.swift */; };
+		306136C02C74D600001CD9D8 /* AddUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306136BF2C74D600001CD9D8 /* AddUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +94,15 @@
 		306136A82C73D137001CD9D8 /* StatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewModel.swift; sourceTree = "<group>"; };
 		306136AA2C73D15F001CD9D8 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		306136AC2C73D6CD001CD9D8 /* StatisticCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticCellView.swift; sourceTree = "<group>"; };
+		306136AE2C74A4DD001CD9D8 /* AddStatisticview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatisticview.swift; sourceTree = "<group>"; };
+		306136B12C74C76F001CD9D8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		306136B32C74C7BD001CD9D8 /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
+		306136B52C74C8D9001CD9D8 /* webViewBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webViewBack.swift; sourceTree = "<group>"; };
+		306136B72C74C8DF001CD9D8 /* WebViewPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewPage.swift; sourceTree = "<group>"; };
+		306136B82C74C8DF001CD9D8 /* webView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webView.swift; sourceTree = "<group>"; };
+		306136BB2C74D0F1001CD9D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		306136BD2C74D1B2001CD9D8 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		306136BF2C74D600001CD9D8 /* AddUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +154,7 @@
 		3043D8202C6B35FD0093E514 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				306136B02C74BFA3001CD9D8 /* Settings */,
 				306136A72C73CE94001CD9D8 /* Statistics */,
 				304B13892C6FDD7900FCCF9A /* Events */,
 				3043D84D2C6E26700093E514 /* FavoriteMatch */,
@@ -165,6 +184,7 @@
 				3043D82B2C6B41900093E514 /* PhotoPicker.swift */,
 				3043D8362C6CE6290093E514 /* BlueButtonView.swift */,
 				3043D83B2C6CF0090093E514 /* FavoriteView.swift */,
+				306136B32C74C7BD001CD9D8 /* SettingButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -184,6 +204,7 @@
 				3043D8582C6E30460093E514 /* MatchViewModel.swift */,
 				304B138C2C6FDFF600FCCF9A /* EventsViewmodel.swift */,
 				306136A82C73D137001CD9D8 /* StatisticViewModel.swift */,
+				306136BD2C74D1B2001CD9D8 /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -213,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				3043D8392C6CE9180093E514 /* UserView.swift */,
+				306136BF2C74D600001CD9D8 /* AddUser.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -225,6 +247,7 @@
 				3043D8432C6D31730093E514 /* MyPhoto.swift */,
 				3043D8482C6D32790093E514 /* CoreDataManager.swift */,
 				304B138E2C6FE18500FCCF9A /* Event.swift */,
+				306136BB2C74D0F1001CD9D8 /* User.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -259,8 +282,20 @@
 			isa = PBXGroup;
 			children = (
 				306136AA2C73D15F001CD9D8 /* StatisticView.swift */,
+				306136AE2C74A4DD001CD9D8 /* AddStatisticview.swift */,
 			);
 			path = Statistics;
+			sourceTree = "<group>";
+		};
+		306136B02C74BFA3001CD9D8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				306136B82C74C8DF001CD9D8 /* webView.swift */,
+				306136B72C74C8DF001CD9D8 /* WebViewPage.swift */,
+				306136B52C74C8D9001CD9D8 /* webViewBack.swift */,
+				306136B12C74C76F001CD9D8 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,9 +377,11 @@
 				3043D8112C6B35960093E514 /* ViewController.swift in Sources */,
 				3043D8292C6B3FAB0093E514 /* MainView.swift in Sources */,
 				3043D8352C6CCB5F0093E514 /* ProductCellView.swift in Sources */,
+				306136B62C74C8D9001CD9D8 /* webViewBack.swift in Sources */,
 				3043D8402C6D2D980093E514 /* MatchMemo.xcdatamodeld in Sources */,
 				3043D8492C6D327A0093E514 /* CoreDataManager.swift in Sources */,
 				3043D8302C6C88D60093E514 /* SubscribeView.swift in Sources */,
+				306136B92C74C8DF001CD9D8 /* WebViewPage.swift in Sources */,
 				3043D8472C6D32090093E514 /* MyPhotosViewModel.swift in Sources */,
 				304B138F2C6FE18500FCCF9A /* Event.swift in Sources */,
 				304B138B2C6FDD9900FCCF9A /* FavoriteEventsView.swift in Sources */,
@@ -354,14 +391,21 @@
 				3043D83A2C6CE9180093E514 /* UserView.swift in Sources */,
 				306136A42C73B7BB001CD9D8 /* MultiLineTF.swift in Sources */,
 				306136AD2C73D6CD001CD9D8 /* StatisticCellView.swift in Sources */,
+				306136B42C74C7BD001CD9D8 /* SettingButton.swift in Sources */,
 				3043D83C2C6CF0090093E514 /* FavoriteView.swift in Sources */,
+				306136AF2C74A4DD001CD9D8 /* AddStatisticview.swift in Sources */,
 				3043D8372C6CE6290093E514 /* BlueButtonView.swift in Sources */,
+				306136BE2C74D1B2001CD9D8 /* UserViewModel.swift in Sources */,
 				3043D8592C6E30460093E514 /* MatchViewModel.swift in Sources */,
 				3043D84F2C6E26A40093E514 /* FavoriteMatchsView.swift in Sources */,
+				306136BC2C74D0F1001CD9D8 /* User.swift in Sources */,
+				306136C02C74D600001CD9D8 /* AddUser.swift in Sources */,
 				306136A62C73BB3C001CD9D8 /* EventCell.swift in Sources */,
 				3043D84C2C6D36300093E514 /* MyPhotoview.swift in Sources */,
 				3043D8232C6B36300093E514 /* LoadingView.swift in Sources */,
+				306136BA2C74C8DF001CD9D8 /* webView.swift in Sources */,
 				3043D80D2C6B35960093E514 /* AppDelegate.swift in Sources */,
+				306136B22C74C76F001CD9D8 /* SettingsView.swift in Sources */,
 				306136A92C73D137001CD9D8 /* StatisticViewModel.swift in Sources */,
 				3043D8532C6E2F3C0093E514 /* AddNewMatchView.swift in Sources */,
 				3043D80F2C6B35960093E514 /* SceneDelegate.swift in Sources */,
